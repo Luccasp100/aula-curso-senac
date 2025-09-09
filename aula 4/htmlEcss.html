@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de HTML com CSS</title>
+
+    <!-- Recados -->
+
+    <!-- Pelas boas práticas, damos preferência em * utilizar o CSS em um arquivo EXTERNO* , tal como fazemos com Javascript aqui no curso! Para linkar um arquivo CSS abrimos uma tag <link> dentro do <head> do HTML, com os atributos rel="stylesheet" e href="caminho/para/o/arquivo.css". ex: <link rel="stylesheet" href="/css-js/estilo.css"> -->
+
+    <!-- Mas para exemplificar o uso do CSS, vamos colocar ele diretamente aqui, dentro de uma tag <style> para que você possam estudar de forma mais simplificada em uma rquivo só! -->
+
+    <!--Aqui é um guia para vocês utilizarem para estudar e pesquisar sobre algumas TAGS HTML e PROPRIEDADES CSS. Espero que sirva de respaldo para a nossa jornada em Javascript! -->
+
+    <!--Indico que desçam o arquivo até chegar no HTML e comecem a estudar por ali e depois voltem e comecem a ver o CSS-->
+
+
+    <!-- CSS Interno -->
+
+    <style>
+        /* Estilo geral da página */
+        body {
+            font-family: Arial, sans-serif;
+            /*Define a fonte9tipografia que vamos usar no nosso site*/
+            background-color: #f0f0f0;
+            /*Cor de fundo da página*/
+            color: #333;
+            /*Cor do texto*/
+            margin: 20px;
+            /*Margem ao redor do conteúdo*/
+        }
+
+        /* Estilo para o menu principal */
+        #menu-principal {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            /*espaçamento interno entre o container e seu conteúdo*/
+            margin-bottom: 20px;
+            /*espaçamento externo entre o container e outros elementos apenas embaixo*/
+        }
+
+        /* Estilo para elementos com a classe destaque */
+        .destaque {
+            color: red;
+            font-weight: bold;
+            /*expessura do texto ex: deixar em negrito*/
+        }
+
+        /* Estilo para parágrafos dentro de divs */
+        div p {
+            font-size: 16px;
+            /*Tamanho da fonte*/
+        }
+
+        /* Estilo para links ao passar o mouse */
+        a:hover {
+            color: blue;
+        }
+
+        /* Estilo para listas não ordenadas */
+        ul {
+            list-style-type: square;
+            /*Tipo de marcador: quadrado*/
+        }
+
+        /* Estilo para tabelas */
+        table {
+            border-collapse: collapse;
+            /*Remove espaços entre as bordas das células*/
+            margin-top: 20px;
+            /*Espaçamento acima da tabela*/
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            /*Borda preta de 1px*/
+            padding: 8px;
+        }
+
+        /* Estilo para o formulário */
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            margin-right: 10px;
+            /*Espaçamento à direita do campo de texto*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menu principal -->
+    <nav id="menu-principal">Menu</nav>
+
+    <!-- Cabeçalhos -->
+    <h1>Título Principal</h1>
+    <h2>Subtítulo</h2>
+
+    <!-- Parágrafo -->
+    <p>Este é um parágrafo de texto.</p>
+
+    <!-- Link -->
+    <a href="https://www.google.com" target="_blank">Visite o site</a>
+
+
+    <!-- Lista não ordenada -->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <!-- Lista ordenada -->
+    <ol>
+        <li>Primeiro</li>
+        <li>Segundo</li>
+    </ol>
+
+    <!-- Tabela -->
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <!-- Formulário -->
+    <form action="/enviar" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <!-- Divisão de conteúdo -->
+    <main id="conteudo-principal" class="bloco destaque">
+        <p>Este é um bloco de conteúdo.</p>
+    </main>
+
+    <footer> <!-- Rodapé -->
+        <p>Texto com
+            <span class="destaque">destaque</span> no meio.
+        </p>
+    </footer>
+    
+    <script src="index.js"></script>
+</body>
+
+</html>
