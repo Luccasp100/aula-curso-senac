@@ -1,0 +1,65 @@
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: firebrick;
+}
+
+/* Grid de serviços */
+.servicos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    list-style: none;
+}
+
+/* Cartão de serviço */
+.servico-card {
+    border: none;
+    border-radius: 14px;
+    padding: 22px;
+    background-color: #fdfdfd;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s;
+    cursor: pointer;
+    list-style: none;
+}
+
+.servico-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    background-color: #fefaf6;
+}
+
+/* Título do serviço */
+.servico-card h3 {
+    color: #86c7f5; /* Coral, cor alegre que remete a pets */
+    margin-top: 0;
+    font-size: 1.3em;
+    font-weight: 600;
+    border-bottom: 2px dashed #ffd5c2;
+    padding-bottom: 8px;
+}
+
+/* Texto dentro do card */
+.servico-card p {
+    color: #444;
+    line-height: 1.6;
+    margin-top: 12px;
+    font-size: 0.95em;
+}
+
+/* --- Animações extras (somente novos seletores para animar) --- */
+@keyframes bounceIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.servico-card {
+    animation: bounceIn 0.5s ease forwards;
+}

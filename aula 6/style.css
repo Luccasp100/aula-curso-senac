@@ -1,0 +1,48 @@
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Grid de serviços */
+.servicos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    list-style: none;
+}
+
+/* Cartão de serviço */
+.servico-card {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do serviço */
+.servico-card h3 {
+    color: #0078d7;
+    margin-top: 0;
+    font-size: 1.4em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+}
+
+/* Texto dentro do card */
+.servico-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+} 
