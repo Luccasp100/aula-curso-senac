@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tópico 9: Formulários</title>
+    <link rel="stylesheet" href="/css-js/estilo.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide">
+            <h1>Aula 9: Formulários e Validação de Dados</h1>
+            <p>Capturando e validando a entrada do usuário de forma interativa.</p>
+        </div>
+
+        <div class="slide">
+            <h2>O Evento Chave: <code>'submit'</code></h2>
+            <p>Para formulários, não ouvimos o 'click' no botão. Ouvimos o evento <b><code>'submit'</code></b> no próprio elemento <code>&lt;form&gt;</code>.</p>
+            <pre><span class="js-keyword">const</span> meuFormulario = document.getElementById(<span class="js-string">'meu-form'</span>);
+
+meuFormulario.addEventListener(<span class="js-string">'submit'</span>, <span class="js-keyword">function</span>(event) {
+    <span class="js-comment">// O código aqui dentro roda quando o form é enviado.</span>
+});</pre>
+            <p>Isso garante que a validação ocorra tanto ao clicar no botão quanto ao pressionar 'Enter' em um campo.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Assumindo o Controle: <code>event.preventDefault()</code></h2>
+            <p>Por padrão, o navegador recarrega a página ao submeter um formulário. Para que nosso JavaScript possa fazer a validação, precisamos impedir essa ação.</p>
+            <pre>meuFormulario.addEventListener(<span class="js-string">'submit'</span>, <span class="js-keyword">function</span>(event) {
+    <span class="highlight">event.preventDefault();</span> <span class="js-comment">// A primeira linha, SEMPRE!</span>
+
+    <span class="js-keyword">console</span>.log(<span class="js-string">"Formulário enviado, mas a página não recarregou!"</span>);
+});</pre>
+        </div>
+
+        <div class="slide">
+            <h2>Lendo os Dados: A Propriedade <code>.value</code></h2>
+            <p>Dentro do nosso listener, podemos acessar o que o usuário digitou em um campo de input através da propriedade <code>.value</code>.</p>
+            <pre><span class="js-keyword">const</span> inputNome = document.getElementById(<span class="js-string">'campo-nome'</span>);
+
+meuFormulario.addEventListener(<span class="js-string">'submit'</span>, <span class="js-keyword">function</span>(event) {
+    event.preventDefault();
+    <span class="js-keyword">const</span> nomeDigitado = inputNome.value;
+    <span class="js-keyword">console</span>.log(<span class="js-string">`O nome digitado foi: ${nomeDigitado}`</span>);
+});</pre>
+        </div>
+
+        <div class="slide">
+            <h2>Feedback Visual: Manipulando Classes CSS</h2>
+            <p>A melhor forma de indicar erros é adicionando ou removendo classes CSS nos elementos. Isso separa a lógica (JS) da aparência (CSS).</p>
+            <b>CSS:</b>
+            <pre>.input-error { border: 2px solid red; }
+.msg-error { color: red; display: block; }</pre>
+            <b>JavaScript:</b>
+            <pre><span class="js-keyword">if</span> (nomeDigitado === <span class="js-string">""</span>) {
+    inputNome.classList.add(<span class="js-string">'input-error'</span>);
+    mensagemDeErro.textContent = <span class="js-string">"Campo obrigatório!"</span>;
+} <span class="js-keyword">else</span> {
+    inputNome.classList.remove(<span class="js-string">'input-error'</span>);
+}</pre>
+        </div>
+
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+    <script src="/css-js/slide.js"></script>
+</body>
+</html>

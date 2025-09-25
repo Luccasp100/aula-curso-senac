@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11 - Carrossel</title>
+    <link rel="stylesheet" href="aula11.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1 id="titulo-principal">Bem-vindo ao Petshop Patas & Pelos</h1>
+        <p id="subtitulo">O lugar perfeito para o seu pet.</p>
+        <div class="botoes-topo">
+            <button id="btn-mudar-tema" class="botao">Mudar para Tema Escuro</button>
+            <button id="btn-promocao" class="botao">Ver Promoção do Mês</button>
+        </div>
+        <section class="carousel-section"> <!--Seção delimitada para o nosso carrossel-->
+            <div class="carousel-container"> <!--container para a pista de imagens-->
+                <button id="btn-prev">&#8592;</button>
+                <div class="carousel-track"> <!--pista onde as imagens serão passadas, tal como uma esteira ou varal automatico-->
+                    <!--As imagens do carrossel serão inseridas dinamicamente pelo JS! Lembrando que btn prev é o botão para voltar(anterior) e o btn-next é o botão para passar para o próximo-->
+                </div>
+                <button id="btn-next">&#8594;</button>
+            </div>
+        </section>
+        <section>
+            <h2>Nossos Serviços</h2>
+            <ul id="lista-servicos" class="servicos-container">
+            </ul>
+        </section>
+        <section class="form-section">
+            <h2>Agende sua visita!</h2>
+            <form id="form-agendamento" novalidate>
+                <!-- no validate (não validação dos dados, estamos udsando apenas para fim educacional - não é usado no dia a dia)-->
+                <div class="form-group">
+                    <label for="nome-pet">Nome do Pet:</label>
+                    <input type="text" id="nome-pet" placeholder="Ex: Bolinha">
+                    <small class="mensagem-erro" id="msg-erro-pet"></small>
+                </div>
+                <div class="form-group">
+                    <label for="email-tutor">E-mail do Tutor:</label>
+                    <input type="email" id="email-tutor" placeholder="Ex: seuemail@email.com">
+                    <small class="mensagem-erro" id="msg-erro-email"></small>
+                </div>
+                <!-- O BOTÃO DE ENVIO DO FORMULÁRIO TEM QUE ESTAR DENTRO DA TAG FORM!!!!!!!-->
+                <button type="submit" class="botao">Agendar</button>
+            </form>
+        </section>
+    </main>
+    <dialog id="detalhes-dialog">
+        <div class="dialog-cabecalho">
+            <h2>Promoção Imperdível!</h2>
+            <button id="btn-fechar" class="btn-fechar">&times;</button>
+        </div>
+        <div class="dialog-corpo">
+            <p>Este mês, todos os serviços de <b>Banho & Tosa</b> estão com <b>20% de desconto </b> para pagamentos com
+                PIX!</p>
+            <p>Aproveite para deixar seu melhor amigo ainda mais feliz e cheiroso.</p>
+        </div>
+    </dialog>
+    <script src="aula11.js"></script>
+</body>
+
+</html>

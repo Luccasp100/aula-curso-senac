@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 9 - FORMULÁRIOS</title>
+    <link rel="stylesheet" href="aula9.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1 id="titulo-principal">Bem-vindo ao Petshop Patas & Pelos</h1>
+        <p id="subtitulo">O lugar perfeito para o seu pet.</p>
+        <button id="btn-mudar-tema" class="botao">Mudar para Tema Escuro</button>
+        <section>
+            <h2>Nossos Serviços</h2>
+            <ul id="lista-servicos" class="servicos-container">
+            </ul>
+        </section>
+        <section class="form-section">
+            <h2>Agende sua visita!</h2>
+            <form id="form-agendamento" novalidate><!-- no validate (não validação dos dados, estamos udsando apenas para fim educacional - não é usado no dia a dia)-->
+                <div class="form-group">
+                    <label for="nome-pet">Nome do Pet:</label>
+                    <input type="text" id="nome-pet" placeholder="Ex: Bolinha">
+                    <small class="mensagem-erro" id="msg-erro-pet"></small>
+                </div>
+                <div class="form-group">
+                    <label for="email-tutor">E-mail do Tutor:</label>
+                    <input type="email" id="email-tutor" placeholder="Ex: seuemail@email.com">
+                    <small class="mensagem-erro" id ="msg-erro-email"></small>
+                </div>
+                <!-- O BOTÃO DE ENVIO DO FORMULÁRIO TEM QUE ESTAR DENTRO DA TAG FORM!!!!!!!-->
+                 <button type="submit" class="botao">Agendar</button>
+            </form>
+        </section>
+    </main>
+    <script src="aula9.js"></script>
+</body>
+
+</html>
